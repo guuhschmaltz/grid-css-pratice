@@ -1,0 +1,57 @@
+body {
+    /* resetando css*/
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #7159c1;
+  }
+  
+  .container{
+    font-size: 2.5rem;
+    font-weight: 900;
+    
+    /*
+    Utilizando display grid para todo container da página.
+    */
+    display: grid; 
+    /*
+    Utilizando a divisao de fracoes para as colunas.
+    */
+    grid-template-columns: 3fr 1fr;
+    /*
+    Utilizando a divisao de view height para as divisoes de linhas,
+    as mesmas se assemelham com %
+    No caso que estamos vendo são duas colunas:
+    A primeira utiliza 3 frações da tela e a segunda apenas uma fração.
+    */
+    grid-template-rows: 20vh 70vh 10vh;
+    /*
+    As areas são uma espécie de nomeclatura para serem utilizadas
+    posteriormente.
+    */
+    grid-template-areas: "header header" /*Primeira e segunda coluna da primeira linha com nomeclatura de header*/
+                         "main aside" /*Primeira e segunda coluna da segunda linha, uma para o main e outra para o aside*/
+                         "footer footer"; /*Primeira da primeira linha com nomeclatura de footer*/
+  }
+  
+  header{
+    background: yellow;
+    grid-area: header; /*Essa nomeclatura é a mesma do CSS "grid-template-areas", poderia ser outro nome como simplesmente "h". */
+  }
+  
+  main{
+    background: blue;
+    grid-area: main; /*Essa nomeclatura é a mesma do CSS "grid-template-areas", poderia ser outro nome como simplesmente "m". */
+  }
+  
+  aside{
+    background: green;
+    grid-area: aside; /*Essa nomeclatura é a mesma do CSS "grid-template-areas", poderia ser outro nome como simplesmente "a". */
+  }
+  
+  footer{
+    background: red;
+    grid-area: footer; /*Essa nomeclatura é a mesma do CSS "grid-template-areas", poderia ser outro nome como simplesmente "f". */
+  }
+  
